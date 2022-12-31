@@ -227,7 +227,7 @@ identifications_array = [
 ]
 
 def getNavalMap():
-    userInput = input("id: ").replace(" ","")
+    userInput = input("input : ").replace(" ","")
     map_id    = tuple(map(int,userInput[:2]))
     start     = tuple(map(int,userInput[2:4]))
     stop      = tuple(map(int,userInput[4:6]))
@@ -237,47 +237,50 @@ def getNavalMap():
             return index,start,stop
     print("ERROR : provided identification number "+str(map_id)+" doesnt match any known map")
 
-map_index,start,stop = getNavalMap()
+def main():
 
-print("-- MAP IDENTIFICATION : "+str(map_index))
-print("-- START POSITION     : "+str(start))
-print("-- STOP  POSITION     : "+str(stop))
+    map_index,start,stop = getNavalMap()
 
-# create the map object
-chosen_map=naval_map(all_segment[map_index])
-instruction, result=chosen_map.solve_magic(start,stop)
+    #print("-- MAP IDENTIFICATION : "+str(map_index))
+    print("-- START POSITION     : "+str(start))
+    print("-- STOP  POSITION     : "+str(stop))
 
-# print result
-print("-- PATH TO FOLLOW     : "+str(len(instruction))+" instructions")
-for i in instruction:
-    print("     "+i)
+    # create the map object
+    chosen_map=naval_map(all_segment[map_index])
+    instruction, result=chosen_map.solve_magic(start,stop)
 
-# -- END MAIN --------------------------------------
+    # print result
+    print("-- PATH TO FOLLOW     : "+str(len(instruction))+" instructions")
+    for i in instruction:
+        print("     "+i)
 
-# -- PRINT VISUAL ----------------------------------
-# create empty matrix
-rows = 6
-cols = 6
-matrix = [[ "0" for _ in range(cols)] for _ in range(rows)]
+    # -- END MAIN --------------------------------------
 
-# adding indicators for start and end
-instruction[0]="*"+instruction[0]
-instruction.append("FINISH")
+    # -- PRINT VISUAL ----------------------------------
+    # create empty matrix
+    rows = 6
+    cols = 6
+    matrix = [[ "0" for _ in range(cols)] for _ in range(rows)]
 
-position=0
-for i in result:
-    matrix[i[1]-1][i[0]-1]=instruction[position]
-    position+=1
+    # adding indicators for start and end
+    instruction[0]="*"+instruction[0]
+    instruction.append("FINISH")
+
+    position=0
+    for i in result:
+        matrix[i[1]-1][i[0]-1]=instruction[position]
+        position+=1
+
+    # adding missing "|"
+    matrix[0][0]="|"+matrix[0][0]
+    matrix[-1][-1]=matrix[-1][-1]+"\t|"
 
 
-# adding missing "|"
-matrix[0][0]="|"+matrix[0][0]
-matrix[-1][-1]=matrix[-1][-1]+"\t|"
+    print("-- PATH TO FOLLOW     : ")
+    print("•-----------------------------------------------•")
+    print('\t|\n|'.join(['\t'.join([str(cell) for cell in row]) for row in matrix]))
+    print("•-----------------------------------------------•")
 
 
-
-
-print("-- PATH TO FOLLOW     : ")
-print("•-----------------------------------------------•")
-print('\t|\n|'.join(['\t'.join([str(cell) for cell in row]) for row in matrix]))
-print("•-----------------------------------------------•")
+while True:
+    main()

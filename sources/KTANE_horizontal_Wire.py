@@ -68,7 +68,7 @@ def solver(wires_list, last_serial_odd) :
             print("Min number of wires is 3.\nMax number of wires is 6.")
 
 while True :
-    wires_list=input("wires colors top->bottom ==> left->right\n>>").strip()
+    wires_list=input("wires colors from top to bottom ==> write from left to right\nExemple : rbnw ==> red blue white black(noir)\n>>").strip()
     if len(wires_list)>= 4 :
         input_odd = input("last digit of serial number is odd y/n\n>>")
         if input_odd in ["y","yes","Y","YES"] :
