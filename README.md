@@ -53,8 +53,11 @@ python KTANE_vertical_wire.py
 ![Alt text](/data/KTANE_vertical_wire.jpg?raw=true )
 
 > bsl = blue wire with start and LED 
+>
 > bws = blue white wire and start 
+>
 > rl  = red wire and LED 
+>
 > w   = white wire 
 
 
@@ -76,11 +79,11 @@ python KTANE_naval_battle.py
 ![Alt text](/data/KTANE_naval_battle.jpg?raw=true )
 
 > NOTE : the coordinates are given like this :
-
+>
 > first the row number
-
+>
 > second the line number
-
+>
 > starting at 1 ( not 0)
 
 
