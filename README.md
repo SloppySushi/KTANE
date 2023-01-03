@@ -81,6 +81,7 @@ python KTANE_naval_battle.py
 > - second the line number
 > - starting at 1 ( not 0)
 
+> NOTE : '*' on the map is indicating the starting point
 
 When running the script you're prompted for inputs:
 - first provide the map identification ( red circle , 2,4 )
