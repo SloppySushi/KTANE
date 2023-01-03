@@ -77,6 +77,7 @@ python KTANE_naval_battle.py
 > NOTE : the coordinates are given like this :
 > first the row number
 > second the line number
+> starting at 1 ( not 0)
 
 When running the script you're prompted for inputs:
 - first provide the map identification ( red circle , 2,4 )

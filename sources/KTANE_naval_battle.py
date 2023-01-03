@@ -227,7 +227,7 @@ identifications_array = [
 ]
 
 def getNavalMap():
-    userInput = input("input : ").replace(" ","")
+    userInput = input("'map identification point' 'start' 'stop'\ninput : ").replace(" ","")
     map_id    = tuple(map(int,userInput[:2]))
     start     = tuple(map(int,userInput[2:4]))
     stop      = tuple(map(int,userInput[4:6]))
