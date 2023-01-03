@@ -52,13 +52,10 @@ python KTANE_vertical_wire.py
 ```
 ![Alt text](/data/KTANE_vertical_wire.jpg?raw=true )
 
-> bsl = blue wire with start and LED
->
-> bws = blue white wire and start
->
-> rl  = red wire and LED
->
-> w   = white wire
+> bsl = blue wire with start and LED 
+> bws = blue white wire and start 
+> rl  = red wire and LED 
+> w   = white wire 
 
 
 NOTE : CTRL+C out of it ._.
